@@ -1,0 +1,39 @@
+alias _="sudo"
+alias please="sudo"
+alias g="git"
+alias rr="rm -rf"
+
+
+# Directory listing/traversal
+
+alias l="ls -lahA $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ll="ls -lA $LS_COLORS"
+alias lt="ls -lhAtr $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ld="ls -ld $LS_COLORS */"
+
+
+
+# Network
+alias ip="curl -s ipinfo.io | jq -r '.ip'"
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+# Request using GET, POST, etc. method
+
+for METHOD in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$METHOD"="lwp-request -m '$METHOD'"
+done
+unset METHOD
+
+# Miscellaneous
+
+alias quit="exit"
+alias week="date +%V"
+alias speedtest="curl --output /dev/null http://speed.transip.nl/100mb.bin"
+
+alias kill_jetbrains_toolbox=ps aux | pgrep jetbrains | xargs kill -9 
+
+
+# K8S
+alias k="kubectl"
+alias kctx="kubectx"
+alias kns="kubens"

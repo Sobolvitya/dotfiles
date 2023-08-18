@@ -1,0 +1,12 @@
+[user]
+	email = viktor.sobol@agoda.com
+	name = vsobol
+[core]
+	autocrlf = input
+	excludesfile = /Users/vsobol/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/vsobol/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
