@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vsobol/.oh-my-zsh"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
@@ -137,4 +139,6 @@ _fzf_compgen_dir() {
 }
 
 
-source /Users/vsobol/.docker/init-zsh.sh || true # Added by Docker Desktop
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

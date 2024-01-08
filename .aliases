@@ -37,3 +37,6 @@ alias kill_jetbrains_toolbox=ps aux | pgrep jetbrains | xargs kill -9
 alias k="kubectl"
 alias kctx="kubectx"
 alias kns="kubens"
+alias col="colima start --runtime containerd"
+alias nctl="nerdctl"
+
