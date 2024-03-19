@@ -10,12 +10,12 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
 # Just change the 18/26/33 wich are the rgb values
 echo -e "\033]6;1;bg;red;brightness;18\a"
 echo -e "\033]6;1;bg;green;brightness;26\a"
-echo -e "\033]6;1;bg;blue;brightness;33\a"
+echo -e "\033]6;1;bg;yellow;brightness;50\a"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="arrow"
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -43,8 +43,7 @@ ZSH_THEME="arrow"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
+DISABLE_LS_COLORS="true"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -111,6 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+PROMPT='%{$fg[$NCOLOR]%}%c ➤ %{$reset_color%}'
+RPROMPT='%{$fg[$NCOLOR]%} $(git_prompt_info)%{$reset_color%}'
+
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 # Visual customisation of the second prompt line
@@ -141,4 +143,7 @@ _fzf_compgen_dir() {
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

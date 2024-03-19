@@ -25,6 +25,9 @@ https://sdkman.io/install
 ### pyenv
 https://github.com/pyenv/pyenv
 
+simple creation of virt env from pyenv
+https://github.com/pyenv/pyenv-virtualenv
+
 ### poetry
 
 ## k8s

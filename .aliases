@@ -39,4 +39,5 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias col="colima start --runtime containerd"
 alias nctl="nerdctl"
+# alias gcp="git commmit -am 'Changes' && git push origin $(git branch --show-current)"
 
