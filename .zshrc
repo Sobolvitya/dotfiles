@@ -147,3 +147,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+# export PATH="/opt/homebrew/opt/thrift@0.13/bin:$PATH"
