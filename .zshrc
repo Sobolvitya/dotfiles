@@ -4,7 +4,7 @@
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vsobol/.oh-my-zsh"
+export ZSH="/Users/viktor.sobol/.oh-my-zsh"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
 # Colorise the top Tabs of Iterm2 with the same color as background
 # Just change the 18/26/33 wich are the rgb values
@@ -16,6 +16,7 @@ echo -e "\033]6;1;bg;yellow;brightness;50\a"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="af-magic"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,7 +113,10 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT='%{$fg[$NCOLOR]%}%c ➤ %{$reset_color%}'
 RPROMPT='%{$fg[$NCOLOR]%} $(git_prompt_info)%{$reset_color%}'
-
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 # Visual customisation of the second prompt line
@@ -123,8 +127,8 @@ fi
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/vsobol/.sdkman"
-[[ -s "/Users/vsobol/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vsobol/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/viktor.sobol/.sdkman"
+[[ -s "/Users/viktor.sobol/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/viktor.sobol/.sdkman/bin/sdkman-init.sh"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_COMPLETION_TRIGGER='**'
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
@@ -140,11 +144,7 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+export UBER_OWNER=viktor.sobol
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 # export PATH="/opt/homebrew/opt/thrift@0.13/bin:$PATH"
+eval "$(direnv hook zsh)"

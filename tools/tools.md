@@ -32,7 +32,6 @@ https://github.com/pyenv/pyenv-virtualenv
 
 ## k8s
 ### kubectl
-### kubectl-login for Agoda
 ### k9s
 ### 
 

@@ -1,3 +1,15 @@
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
+
+
+# UBER specific functions
+function openjc() {
+  
+  if [[ -z "$1" ]] 
+  then
+    echo "1st parameter must be the Uber zone" && return 1
+  fi
+  zone="$1"
+  /usr/bin/open -a "/Applications/Google Chrome.app" "https://system.uberinternal.com/jobcontroller-default.$zone.uber.internal:5540"
+}
